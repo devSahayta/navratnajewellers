@@ -1,0 +1,112 @@
+.product-showcase {
+  padding: 60px 20px;
+  background: #fff;
+}
+
+.showcase-title {
+  font-size: 2rem;
+  margin-bottom: 40px;
+  font-weight: bold;
+  color: #1c1c1c;
+  text-align: center;
+}
+
+/* Grid layout with flexible rows */
+.showcase-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 200px; /* default height for cards */
+  gap: 20px;
+}
+
+/* Base card design */
+.showcase-card {
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.showcase-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.2);
+}
+
+.showcase-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Overlay label */
+.showcase-label {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 10px;
+  text-align: center;
+  color: #fff;
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+}
+
+/* Gradient overlays for categories */
+.showcase-label.gold {
+  background: linear-gradient(90deg, #f7b733, #fc4a1a);
+}
+.showcase-label.pink {
+  background: linear-gradient(90deg, #ff758c, #ff7eb3);
+}
+.showcase-label.green {
+  background: linear-gradient(90deg, #43cea2, #185a9d);
+}
+.showcase-label.purple {
+  background: linear-gradient(90deg, #a18cd1, #fbc2eb);
+}
+
+/* Different card sizes like reference */
+.showcase-card.wide {
+  grid-column: span 2; /* spans 2 columns */
+}
+
+.showcase-card.tall {
+  grid-row: span 2; /* spans 2 rows */
+}
+
+.showcase-card.big {
+  grid-column: span 2;
+  grid-row: span 2; /* 2x2 size */
+}
+
+/* Scroll arrows (optional if you keep grid static) */
+.showcase-controls {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.arrow-btn {
+  background: #b8860b;
+  color: #fff;
+  border: none;
+  padding: 12px 16px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: background 0.3s ease;
+}
+
+.arrow-btn:hover {
+  background: #8c6d09;
+}

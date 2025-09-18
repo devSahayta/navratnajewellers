@@ -3,9 +3,10 @@ import { motion } from 'framer-motion';
 import '../styles/trustedSection.css';
 
 const trustItems = [
-  { id: 1, text: 'BIS Hallmarked Gold', icon: '/icons/bis.png' },
-  { id: 2, text: '100% Authentic Silver', icon: '/icons/silver.png' },
-  { id: 3, text: 'Trusted Since 1995', icon: '/icons/trust.png' },
+  { id: 1, text: 'BIS Hallmarked Gold', icon: '/images/New/Bis.png' },
+  { id: 2, text: '100% Authentic Silver', icon: '/images/New/silver2.png' },
+  { id: 3, text: 'Trusted Since 1995', icon: '/images/New/trusted2.png' },
+  { id: 4, text: 'MMTC-PAMP Certified', icon: '/images/New/MMTC.png' },
 ];
 
 const TrustedSection = () => {

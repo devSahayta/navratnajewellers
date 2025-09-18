@@ -25,6 +25,7 @@ import HomeBlog from '../components/newHome/HomeBlog';
 import AstroGem from '../components/newHome/AstroGem';
 import NewFooter from '../components/NewFooter';
 import TrustedSection from '../components/TrustedSection';
+import ProductShowcase from '../components/ProductShowcase';
 
 // @react-icons/all-files/io/IoIosHeartEmpty
 
@@ -184,10 +185,7 @@ const Home = () => {
             to="#"
           >
             <div className="h-sec1-carousel-bg-img imageWrapper ">
-              <img
-                src="/images/home-page-assests/438264547_846103974202968_892064003090336676_n.jpg"
-                alt="Image 1"
-              />
+              <img src="/images/home-page-assests/ban.png" alt="Image 1" />
             </div>
             <div className="h-sec1-carousel-content">
               {/* <h4>Heading</h4>
@@ -203,10 +201,7 @@ const Home = () => {
             to="#"
           >
             <div className="h-sec1-carousel-bg-img imageWrapper ">
-              <img
-                src="/images/home-page-assests/450585018_893059906174041_8330071302460358246_n.jpg"
-                alt="Image 1"
-              />
+              <img src="/images/home-page-assests/ban.png" alt="Image 1" />
             </div>
             <div className="h-sec1-carousel-content">
               {/* <h4>Heading</h4>
@@ -289,6 +284,8 @@ const Home = () => {
 
       <TrustedSection />
 
+      <ProductShowcase />
+
       <div className="home-container">
         {/* Hero Section */}
         {/* <div className="hero-section">
@@ -338,7 +335,7 @@ const Home = () => {
                 className="collection-card"
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.2 }}
+                transition={{ duration: 0.3, delay: index * 0.2 }}
                 viewport={{ once: true }}
               >
                 <div className="collection-image-wrapper">
