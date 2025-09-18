@@ -78,6 +78,9 @@ function App() {
                             path="/mmtc-pamp/"
                             element={<MmtcPampPage />}
                           />
+
+                          <Route path="/GemsBlog" element={<GemsBlog />} />
+                          <Route path="/AboutUs" element={<AboutUs />} />
                           <Route path="/contact" element={<Contact />} />
                           <Route
                             path="/gold-coin/:gramQt"

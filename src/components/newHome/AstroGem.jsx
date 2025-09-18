@@ -1,6 +1,9 @@
+'use client';
+
 import Slider from 'react-slick';
 import { Button, Divider, Panel } from 'rsuite';
 import { GiJewelCrown } from '@react-icons/all-files/gi/GiJewelCrown';
+import { color, motion, useTime, useTransform } from 'framer-motion';
 
 const gemsData = [
   {
@@ -33,7 +36,6 @@ const gemsData = [
     image: '/images/home-page-assests/gems/Yellow-Sapphire.jpeg',
     link: '/astrological-gems/yellow-sapphire-pokhraj',
   },
-
   {
     id: 6,
     name: 'Blue Sapphire (Neelam)',
@@ -55,6 +57,7 @@ const gemsData = [
 ];
 
 const AstroGem = () => {
+  // Slider settings
   const gemSettings = {
     dots: true,
     infinite: true,
@@ -69,29 +72,102 @@ const AstroGem = () => {
     ],
   };
 
+  // === Motion Animation Logic ===
+  const time = useTime();
+  const rotate = useTransform(time, [0, 4000], [0, 360], { clamp: false });
+  const fastRotate = useTransform(() => rotate.get() * 2);
+  const mediumRotate = useTransform(() => rotate.get() * 1.5);
+
   return (
-    <>
-      {/* Astrological Gems Section */}
-      <section className="astrological-gems">
-        <h2>Astrological Gems</h2>
-        <p>
+    <section className="astrological-gems relative w-full overflow-hidden bg-gray-300 text-white border-top border-gray-700 p-0.5 rounded-md">
+      {/* Full-width Animated Background */}
+      <div className="absolute inset-0 z-0">
+        {/* Layer 1 - small gems */}
+        <div style={{ ...boxContainer, gap: 120 }}>
+          {gemsData.slice(0, 5).map((gem, i) => (
+            <motion.img
+              key={`tiny-${i}`}
+              src={gem.image}
+              alt={gem.name}
+              style={{
+                width: 70,
+                height: 70,
+                borderRadius: '50%',
+                rotate: fastRotate,
+              }}
+              className="opacity-60 blur-sm"
+            />
+          ))}
+        </div>
+
+        {/* Layer 2 - medium gems */}
+        <div style={{ ...boxContainer, gap: 200 }}>
+          {gemsData.slice(3, 7).map((gem, i) => (
+            <motion.img
+              key={`mid-${i}`}
+              src={gem.image}
+              alt={gem.name}
+              style={{
+                width: 120,
+                height: 120,
+                borderRadius: '50%',
+                rotate: mediumRotate,
+              }}
+              className="opacity-70 blur-sm"
+            />
+          ))}
+        </div>
+
+        {/* Layer 3 - big gem in center */}
+        <div style={boxContainer}>
+          <motion.img
+            src={gemsData[0].image}
+            alt={gemsData[0].name}
+            style={{
+              width: 180,
+              height: 180,
+              borderRadius: '50%',
+              rotate,
+            }}
+            className="opacity-80"
+          />
+        </div>
+      </div>
+
+      {/* Foreground Content */}
+      <div className="relative z-10 text-center py-16 px-6 bg-black/50">
+        <h2 className="text-3xl font-bold mb-4 " style={{ color: '#4d0020' }}>
+          Astrological Gems
+        </h2>
+        <p className="text-black max-w-2xl mx-auto mb-6">
           Discover the power of gemstones aligned with your zodiac sign and
           bring prosperity and positivity into your life.
         </p>
         <Divider>
-          <GiJewelCrown />
+          <GiJewelCrown color="gold" size={28} />
         </Divider>
-        <Slider {...gemSettings} className="gems-slider">
+
+        <Slider {...gemSettings} className="gems-slider mt-6">
           {gemsData.map(data => (
-            <div key={data.id} className="gem-slide">
-              <Panel shaded bordered bodyFill className="gem-card">
-                <div className="imageWrapper">
-                  <img src={data.image} alt={data.name} className="gem-image" />
+            <div key={data.id} className="gem-slide px-3">
+              <Panel
+                shaded
+                bordered
+                bodyFill
+                className="gem-card bg-white/10 backdrop-blur-md text-white"
+              >
+                <div className="imageWrapper text-white">
+                  <img
+                    src={data.image}
+                    alt={data.name}
+                    className="gem-image mx-auto"
+                  />
                 </div>
-                <h3>{data.name}</h3>
+                <h3 className="mt-2">{data.name}</h3>
                 <Button
                   appearance="ghost"
                   color="yellow"
+                  style={{ marginTop: '10px' }}
                   onClick={() => {
                     window.location.href = data.link;
                   }}
@@ -102,9 +178,21 @@ const AstroGem = () => {
             </div>
           ))}
         </Slider>
-      </section>
-    </>
+      </div>
+    </section>
   );
 };
 
 export default AstroGem;
+
+/**
+ * ================= Styles =================
+ */
+const boxContainer = {
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+  flexWrap: 'wrap',
+  width: '100%',
+  height: '100%',
+};

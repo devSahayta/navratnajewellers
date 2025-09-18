@@ -14,9 +14,9 @@ const AnimatedText = ({ text }) => {
         <motion.span
           key={index}
           // className="text-white"
-          style={{ color: 'rgb(255,255,255)' }}
-          initial={{ color: 'rgb(255,255,255)' }} // Orange color
-          animate={{ color: hovered ? 'rgb(255 234 8)' : 'rgb(255,255,255)' }}
+          style={{ color: 'rgb(0,0,0)' }}
+          initial={{ color: 'rgb(0,0,0)' }} // Orange color
+          animate={{ color: hovered ? 'rgb(255 234 8)' : 'rgb(0,0,0)' }}
           transition={{
             duration: 0.2,
             delay: index * 0.05, // Creates a wave effect on hover

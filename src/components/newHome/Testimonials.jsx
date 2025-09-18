@@ -1,48 +1,92 @@
-import { Carousel, Panel, Rate } from 'rsuite';
-import { FcGoogle } from '@react-icons/all-files/fc/FcGoogle';
+'use client';
+import { useEffect, useRef } from 'react';
+import '../../styles/Testimonials.css';
 
 const reviews = [
   {
     id: 1,
     name: 'Satya Budhraja',
+    location: 'Ranchi',
     comments:
-      'THE BEST JEWELLERY SHOP IN RANCHI WITH PURITY IN GOLD AND SILVER. I AM THE MOST LOYAL CUSTOMER AND ALL MY FRIENDS ARE VERY IMPRESSED BY THIS SHOP. NO WONDER WE LOVE NAVRATNA JEWELLERS.',
+      'The best jewellery shop in Ranchi with purity in gold and silver. I am the most loyal customer and all my friends are very impressed by this shop.',
   },
   {
     id: 2,
     name: 'Brajesh Mishra',
+    location: 'Ranchi',
     comments:
-      'Aroma and politeness of owner makes Navratna jewellers a place where someone makes himself comfortable and feels homely in no time.Deals and flexibility makes Navratna jewelers way ahead of its pears. One should visit here with no hesitation and without any worries .',
+      'Aroma and politeness of owner makes Navratna Jewellers a place where you instantly feel comfortable and homely.',
   },
   {
     id: 3,
-    name: 'BURHANUDDIN BHIWANIWALA',
+    name: 'Burhanuddin',
+    location: 'Ranchi',
     comments:
-      'Great environment and well manner staff with very attractive price and schemes.',
+      'Great environment and well mannered staff with very attractive price and schemes.',
+  },
+  {
+    id: 4,
+    name: 'Anjali Sharma',
+    location: 'Delhi',
+    comments:
+      'Beautiful designs and excellent customer service. Highly recommended!',
+  },
+  {
+    id: 5,
+    name: 'Ravi Kumar',
+    location: 'Patna',
+    comments:
+      'Best shop for gold and diamond jewelry. Trustworthy and reliable!',
+  },
+  {
+    id: 6,
+    name: 'Pooja Verma',
+    location: 'Kolkata',
+    comments:
+      'Loved the collection and the service. Packaging was elegant, and jewellery quality is top-notch.',
   },
 ];
 
 const Testimonials = () => {
+  const scrollRef = useRef(null);
+
+  useEffect(() => {
+    const scrollContainer = scrollRef.current;
+    let scrollAmount = 0;
+
+    const autoScroll = setInterval(() => {
+      if (scrollContainer) {
+        scrollAmount += 2;
+        if (
+          scrollAmount >=
+          scrollContainer.scrollWidth - scrollContainer.clientWidth
+        ) {
+          scrollAmount = 0;
+        }
+        scrollContainer.scrollTo({
+          left: scrollAmount,
+          behavior: 'smooth',
+        });
+      }
+    }, 50);
+
+    return () => clearInterval(autoScroll);
+  }, []);
+
   return (
-    <section className="testimonials">
-      <h2>What Our Customers Say</h2>
-      <Carousel autoplay className="testimonial-slider">
+    <section className="testimonials-section">
+      <h2 className="testimonials-title ">What Our Customers Say</h2>
+      <div className="testimonials-container" ref={scrollRef}>
         {reviews.map(review => (
-          <Panel key={review.id} shaded bordered className="testimonial-card">
-            <div className="google-reviews">
-              <span className="g-reviews-icon">
-                <FcGoogle size="32" />
-              </span>
-              <span className="g-reviews-text">Reviews</span>
-            </div>
-            <div className="g-rating">
-              <Rate defaultValue={5} color="yellow" disabled />
-            </div>
-            <p>&quot;{review.comments}&quot;</p>
-            <h3>{review.name}</h3>
-          </Panel>
+          <div key={review.id} className="testimonial-card">
+            <h3 className="reviewer-name">{review.name}</h3>
+            <br />
+            <p className="reviewer-location">{review.location}</p>
+            <br />
+            <p className="review-text">“{review.comments}”</p>
+          </div>
         ))}
-      </Carousel>
+      </div>
     </section>
   );
 };

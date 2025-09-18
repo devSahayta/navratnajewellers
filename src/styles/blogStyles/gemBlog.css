@@ -1,4 +1,4 @@
-/* .blog-container {
+.blog-container {
   min-height: 100vh;
   background-color: #4d0020;
   color: #ffea08;
@@ -67,4 +67,89 @@
 .explore-button:hover {
   background: lightgrey;
   color: black;
+}
+
+/* -------------------------------------------------------------------------------------------- */
+
+/* .blog-container {
+  padding: 2rem;
+  max-width: 1000px;
+  margin: auto;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+}
+
+.header {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.intro {
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 2rem;
+}
+
+.highlight {
+  color: #ff6f61;
+  font-weight: 600;
+}
+
+.content-container {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.card {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 15px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  text-align: left;
+}
+
+.card h2 {
+  font-size: 1.5rem;
+  color: #222;
+  margin-bottom: 0.8rem;
+}
+
+.card p,
+.card li {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+.gem-list {
+  list-style: none;
+  padding: 0;
+}
+
+.gem-list li {
+  padding: 0.4rem 0;
+  border-bottom: 1px dashed #ddd;
+}
+
+.gem-list li:last-child {
+  border-bottom: none;
+}
+
+.button-container {
+  margin-top: 2rem;
+}
+
+.explore-button {
+  background: #333;
+  color: #fff;
+  padding: 0.8rem 2rem;
+  border: none;
+  border-radius: 30px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
 } */

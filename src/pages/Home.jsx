@@ -3,7 +3,11 @@ import '../styles/Home.css';
 
 //new home page style
 import '../styles/newHome.css';
+import { FiPercent, FiMapPin } from 'react-icons/fi';
+import { motion } from 'framer-motion';
 
+// import { FiMenu } from "react-icons/fi"; // hamburger
+// import { BsThreeDotsVertical } from 'react-icons/bs'; // 3 dots
 import Contact from './Contact';
 import { useWebStatus } from '../context/status.context';
 import { Helmet } from 'react-helmet-async';
@@ -19,6 +23,8 @@ import ProductCarousel from '../components/newHome/ProductCarousel';
 import Testimonials from '../components/newHome/Testimonials';
 import HomeBlog from '../components/newHome/HomeBlog';
 import AstroGem from '../components/newHome/AstroGem';
+import NewFooter from '../components/NewFooter';
+import TrustedSection from '../components/TrustedSection';
 
 // @react-icons/all-files/io/IoIosHeartEmpty
 
@@ -113,31 +119,60 @@ const Home = () => {
             </div>
           </Link>
         </div>
-        <div className="h-sec1-collection-container dis-flex ">
+
+        <div className="h-sec1-collection-container dis-flex">
           <a href="#" className="default-remove-a">
-            <AnimatedText text="Collections" />
+            <AnimatedText text="Gold" />
+          </a>
+          <a href="#" className="default-remove-a">
+            <AnimatedText text="Silver" />
+          </a>
+          <a href="#" className="default-remove-a">
+            <AnimatedText text="Gems" />
           </a>
           <a href="mmtc-pamp" className="default-remove-a">
-            <AnimatedText text="Shop Now" />
+            <AnimatedText text="Store" />
           </a>
-          <a href="#" className="default-remove-a">
+          {/* <a href="GemsBlog" className="default-remove-a"></a> */}
+          <Link className="default-remove-a" to="GemsBlog">
             <AnimatedText text="Blog" />
-          </a>
-          <a href="#" className="default-remove-a">
+          </Link>
+          {/* <a href="AboutUs" className="default-remove-a">
+            
+          </a> */}
+          <Link className="default-remove-a" to="AboutUs">
             <AnimatedText text="About Us" />
+          </Link>
+        </div>
+
+        <div className="header-extr">
+          <Link to="/offers" className="extra-link">
+            <FiPercent className="extra-icon" />
+            <span>Offers</span>
+          </Link>
+          <a
+            href="https://maps.app.goo.gl/n4b6ci7L7JXLaAFDA"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="extra-link"
+          >
+            <FiMapPin className="extra-icon" />
+            <span>Find a Store</span>
           </a>
         </div>
+
         <div className="h-sec1-contact-container dis-flex ">
-          <a href="#" className="default-remove-a">
+          <a href="Contact" className="default-remove-a">
             Contact Us
           </a>
         </div>
       </div>
-      <div className="home-section1-container">
+
+      <div className="home-section1-container ">
         <Carousel
           autoplay
           style={{
-            height: '100vh',
+            height: '70vh',
           }}
         >
           <Link
@@ -237,20 +272,37 @@ const Home = () => {
           </Link>
         </Carousel>
       </div>
+      {/* Promo Banner Section */}
+      <section className="promo-banner">
+        <motion.div
+          className="promo-text"
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: 'easeOut' }}
+          viewport={{ once: true }}
+        >
+          <span className="highlight"> Limited Time Offer:</span>
+          Get <strong>10% Off</strong> on Gold Coins & Free Shipping on Gems –
+          Shop Now!
+        </motion.div>
+      </section>
+
+      <TrustedSection />
+
       <div className="home-container">
         {/* Hero Section */}
-        <div className="hero-section">
+        {/* <div className="hero-section">
           <div className="hero-content">
-            <h1>Timeless Elegance, Crafted for You</h1>
+            <h1 className="text-red">Timeless Elegance, Crafted for You</h1>
             <div className="hero-buttons">
               <Button appearance="primary">Shop Now</Button>
               <Button appearance="ghost">Explore Collections</Button>
             </div>
           </div>
-        </div>
+        </div> */}
 
         {/* Featured Collections */}
-        <section className="collections">
+        {/* <section className="collections">
           <h2>Our Collections</h2>
           <div className="collection-grid">
             {['Gold', 'Silver', 'MMTC-PAMP'].map((category, index) => (
@@ -267,21 +319,50 @@ const Home = () => {
                   className="collection-image"
                 />
                 <h3>{category} Collection</h3>
+
                 <Button appearance="primary">View More</Button>
               </Panel>
             ))}
           </div>
-        </section>
+        </section> */}
 
-        <section>
-          <div>
-            <ProductCarousel title="New Arrivals" />
+        {/* Collections Section */}
+        <section className="collections">
+          <h2>
+            Explore our latest collections online even before you walk in!
+          </h2>
+          <div className="collection-grid">
+            {['Gold', 'Silver', 'Gems', 'MMTC PAMP'].map((category, index) => (
+              <motion.div
+                key={index}
+                className="collection-card"
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.2 }}
+                viewport={{ once: true }}
+              >
+                <div className="collection-image-wrapper">
+                  <img
+                    src={`/images/home-page-assests/collection/${category.toLowerCase().replace(' ', '-')}.jpg`}
+                    alt={category}
+                    className="collection-image"
+                  />
+                </div>
+                <h3>{category}</h3>
+                <button className="explore-btn">Explore</button>
+              </motion.div>
+            ))}
           </div>
         </section>
 
         {/* Astrological Gems Section */}
         <AstroGem />
 
+        <section>
+          <div>
+            <ProductCarousel title="New Arrivals" />
+          </div>
+        </section>
         {/* Customer Testimonials */}
         <Testimonials />
 
@@ -290,7 +371,7 @@ const Home = () => {
 
         {/* Contact & Store Info */}
         <footer className="footer">
-          <h2>Visit Us</h2>
+          {/* <h2>Visit Us</h2>
           <div className="contact-info">
             <div>
               <FaMapMarkerAlt />
@@ -304,7 +385,9 @@ const Home = () => {
               <FaEnvelope />
               <span>contact@navratnajewellers.com</span>
             </div>
-          </div>
+          </div> */}
+
+          <NewFooter />
         </footer>
       </div>
     </div>
