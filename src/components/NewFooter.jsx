@@ -10,7 +10,7 @@ import '../styles/newHeader.css';
 const NewFooter = () => {
   return (
     <footer className="footer">
-      <div className="footer-container">
+      <div className="footer-container1">
         {/* About */}
         <div className="footer-column">
           <h3>About Navratna</h3>

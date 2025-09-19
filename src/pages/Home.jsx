@@ -3,7 +3,7 @@ import '../styles/Home.css';
 
 //new home page style
 import '../styles/newHome.css';
-import { FiPercent, FiMapPin } from 'react-icons/fi';
+// import { FiPercent, FiMapPin } from 'react-icons/fi';
 import { motion } from 'framer-motion';
 
 // import { FiMenu } from "react-icons/fi"; // hamburger
@@ -146,7 +146,7 @@ const Home = () => {
           </Link>
         </div>
 
-        <div className="header-extr">
+        {/* <div className="header-extr">
           <Link to="/offers" className="extra-link">
             <FiPercent className="extra-icon" />
             <span>Offers</span>
@@ -166,7 +166,7 @@ const Home = () => {
           <a href="Contact" className="default-remove-a">
             Contact Us
           </a>
-        </div>
+        </div> */}
       </div>
 
       <div className="home-section1-container ">

@@ -2,7 +2,7 @@
 import { Link } from 'react-router-dom';
 import { useScroll, useMotionValueEvent, motion } from 'framer-motion';
 import { useState } from 'react';
-import { FiShoppingCart, FiUser, FiSearch } from 'react-icons/fi';
+import { FiPercent, FiMapPin } from 'react-icons/fi';
 import '../styles/newHeader.css';
 
 const navItems = [
@@ -44,7 +44,6 @@ const NewHeader = () => {
           Shop Now!
         </motion.div>
       </section>
-
       <motion.header
         initial={{ y: -80, opacity: 0 }}
         animate={{
@@ -87,49 +86,28 @@ const NewHeader = () => {
           ))}
         </nav>
 
-        {/* Right Side */}
-        <div className="h-sec1-right dis-flex">
-          {/* Search */}
-          <motion.div whileHover={{ scale: 1.1 }} className="icon-btn">
-            <FiSearch size={22} />
-          </motion.div>
-
-          {/* User */}
-          <motion.div
-            whileHover={{ rotate: 10, scale: 1.1 }}
-            className="icon-btn"
-          >
-            <FiUser size={22} />
-          </motion.div>
-
-          {/* Cart */}
-          <motion.div
-            whileHover={{ scale: 1.2 }}
-            whileTap={{ scale: 0.9 }}
-            className="icon-btn cart-container"
-          >
-            <FiShoppingCart size={22} />
-            <motion.span
-              initial={{ scale: 0 }}
-              animate={{ scale: 1 }}
-              transition={{ type: 'spring', stiffness: 300 }}
-              className="cart-badge"
-            >
-              2
-            </motion.span>
-          </motion.div>
-
-          {/* --- New Items: Offers + Store --- */}
-          {/* <div className="header-extra">
+        {/* --- Extra Links (Offers + Find a Store + Contact) --- */}
+        <div className="header-extra">
           <Link to="/offers" className="extra-link">
             <FiPercent className="extra-icon" />
             <span>Offers</span>
           </Link>
-          <Link to="/store-locator" className="extra-link">
+
+          <a
+            href="https://maps.app.goo.gl/n4b6ci7L7JXLaAFDA"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="extra-link"
+          >
             <FiMapPin className="extra-icon" />
             <span>Find a Store</span>
-          </Link>
-        </div> */}
+          </a>
+
+          <div className="h-sec1-contact-container dis-flex">
+            <Link to="/contact" className="default-remove-a">
+              Contact Us
+            </Link>
+          </div>
         </div>
       </motion.header>
     </>

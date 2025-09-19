@@ -60,14 +60,16 @@ const ProductCarousel = ({ title }) => {
         {products.map(product => (
           <div key={product.id} className="product-slide">
             <Panel shaded bordered bodyFill className="product-card">
-              <img
-                src={product.image}
-                alt={product.name}
-                className="product-image"
-              />
+              <div className="product-image-wrapper">
+                <img
+                  src={product.image}
+                  alt={product.name}
+                  className="product-image"
+                />
+              </div>
               <div className="product-card-details">
                 <h3>{product.name}</h3>
-                <a href="#" className="default-remove-a">
+                <a href="#" className="shop-btn">
                   Shop Now
                 </a>
               </div>

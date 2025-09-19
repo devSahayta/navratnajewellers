@@ -11,11 +11,11 @@
   text-align: center;
 }
 
-/* Grid layout with flexible rows */
+/* Grid layout (default: Desktop) */
 .showcase-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-auto-rows: 200px; /* default height for cards */
+  grid-auto-rows: 200px; /* base row height */
   gap: 20px;
 }
 
@@ -74,21 +74,19 @@
   background: linear-gradient(90deg, #a18cd1, #fbc2eb);
 }
 
-/* Different card sizes like reference */
+/* Different card sizes */
 .showcase-card.wide {
-  grid-column: span 2; /* spans 2 columns */
+  grid-column: span 2;
 }
-
 .showcase-card.tall {
-  grid-row: span 2; /* spans 2 rows */
+  grid-row: span 2;
 }
-
 .showcase-card.big {
   grid-column: span 2;
-  grid-row: span 2; /* 2x2 size */
+  grid-row: span 2;
 }
 
-/* Scroll arrows (optional if you keep grid static) */
+/* Scroll arrows */
 .showcase-controls {
   margin-top: 30px;
   display: flex;
@@ -106,7 +104,52 @@
   font-size: 1.2rem;
   transition: background 0.3s ease;
 }
-
 .arrow-btn:hover {
   background: #8c6d09;
+}
+
+/* ✅ Responsive Layouts */
+
+/* Mobile (≤600px) */
+@media (max-width: 600px) {
+  .showcase-grid {
+    grid-template-columns: 1fr;
+    grid-auto-rows: 220px;
+  }
+
+  .showcase-card.wide,
+  .showcase-card.tall,
+  .showcase-card.big {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
+
+  .showcase-title {
+    font-size: 1.6rem;
+  }
+}
+
+/* Tablet (601px–992px) */
+@media (min-width: 601px) and (max-width: 992px) {
+  .showcase-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 220px;
+  }
+
+  .showcase-card.big {
+    grid-column: span 2;
+    grid-row: span 2;
+  }
+
+  .showcase-title {
+    font-size: 1.8rem;
+  }
+}
+
+/* Laptop/Desktop (≥993px) */
+@media (min-width: 993px) {
+  .showcase-grid {
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 200px;
+  }
 }

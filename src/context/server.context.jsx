@@ -3,10 +3,10 @@ import { createContext, useContext } from 'react';
 const ServerContext = createContext();
 
 export const ServerProvider = ({ children }) => {
-  const serverLink = 'http://127.0.0.1';
+  // const serverLink = 'http://127.0.0.1';
 
   // production only
-  // const serverLink = '';
+  const serverLink = '';
 
   return (
     <ServerContext.Provider value={{ serverLink }}>

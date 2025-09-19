@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+// import React from 'react';
 import '../styles/productShowcase.css';
 
 export default function ProductShowcase() {
@@ -12,7 +12,7 @@ export default function ProductShowcase() {
         {/* Big card - Gold Jewellery */}
         <div className="showcase-card big">
           <img
-            src="/images/gold.jpg"
+            src="/images/New/n1.png"
             alt="Gold Jewellery"
             className="showcase-img"
           />
@@ -21,11 +21,19 @@ export default function ProductShowcase() {
 
         {/* 14 Karat */}
         <div className="showcase-card">
-          <img src="/images/14k.jpg" alt="14 Karat" className="showcase-img" />
+          <img
+            src="/images/New/n2.png"
+            alt="14 Karat"
+            className="showcase-img"
+          />
           <div className="showcase-label gold">14 Karat</div>
         </div>
         <div className="showcase-card">
-          <img src="/images/14k.jpg" alt="14 Karat" className="showcase-img" />
+          <img
+            src="/images/New/n2.png"
+            alt="14 Karat"
+            className="showcase-img"
+          />
           <div className="showcase-label gold">14 Karat</div>
         </div>
 
