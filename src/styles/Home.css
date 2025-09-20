@@ -548,6 +548,7 @@ button {
 /* zoom hover */
 .collection-card:hover .collection-image-wrapper img {
   transform: scale(1.08);
+  /* image-rendering: url(/blogPages/GemsBlog.jsx); */
 }
 
 /* card content */

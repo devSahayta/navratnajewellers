@@ -12,13 +12,13 @@ import Contact from './Contact';
 import { useWebStatus } from '../context/status.context';
 import { Helmet } from 'react-helmet-async';
 import { Button, Carousel, Panel } from 'rsuite';
-import { FaMapMarkerAlt } from '@react-icons/all-files/fa/FaMapMarkerAlt';
-import { FaPhoneAlt } from '@react-icons/all-files/fa/FaPhoneAlt';
-import { FaEnvelope } from '@react-icons/all-files/fa/FaEnvelope';
+// import { FaMapMarkerAlt } from '@react-icons/all-files/fa/FaMapMarkerAlt';
+// import { FaPhoneAlt } from '@react-icons/all-files/fa/FaPhoneAlt';
+// import { FaEnvelope } from '@react-icons/all-files/fa/FaEnvelope';
 import { Link } from 'react-router-dom';
 import { useScroll, useMotionValueEvent } from 'motion/react';
 import { useState } from 'react';
-import AnimatedText from '../components/AnimatedText';
+// import AnimatedText from '../components/AnimatedText';
 import ProductCarousel from '../components/newHome/ProductCarousel';
 import Testimonials from '../components/newHome/Testimonials';
 import HomeBlog from '../components/newHome/HomeBlog';
@@ -26,6 +26,7 @@ import AstroGem from '../components/newHome/AstroGem';
 import NewFooter from '../components/NewFooter';
 import TrustedSection from '../components/TrustedSection';
 import ProductShowcase from '../components/ProductShowcase';
+import NewHeader from '../components/NewHeader';
 
 // @react-icons/all-files/io/IoIosHeartEmpty
 
@@ -106,7 +107,9 @@ const Home = () => {
         <a href="/mmtc-pamp">MMTC PAMP</a>
       </div> */}
 
-      <div
+      <NewHeader />
+
+      {/* <div
         className={`h-sec1-header-container ${direction == 'Up' || direction == 'Idle' ? 'head-dir-up' : 'head-dir-down'}`}
       >
         <div className=" h-sec1-logo-container dis-flex ">
@@ -134,19 +137,19 @@ const Home = () => {
           <a href="mmtc-pamp" className="default-remove-a">
             <AnimatedText text="Store" />
           </a>
-          {/* <a href="GemsBlog" className="default-remove-a"></a> */}
+          <a href="GemsBlog" className="default-remove-a"></a>
           <Link className="default-remove-a" to="GemsBlog">
             <AnimatedText text="Blog" />
           </Link>
-          {/* <a href="AboutUs" className="default-remove-a">
+          <a href="AboutUs" className="default-remove-a">
             
-          </a> */}
+          </a>
           <Link className="default-remove-a" to="AboutUs">
             <AnimatedText text="About Us" />
           </Link>
         </div>
 
-        {/* <div className="header-extr">
+        <div className="header-extr">
           <Link to="/offers" className="extra-link">
             <FiPercent className="extra-icon" />
             <span>Offers</span>
@@ -166,8 +169,8 @@ const Home = () => {
           <a href="Contact" className="default-remove-a">
             Contact Us
           </a>
-        </div> */}
-      </div>
+        </div>
+      </div> */}
 
       <div className="home-section1-container ">
         <Carousel
@@ -338,14 +341,16 @@ const Home = () => {
                 transition={{ duration: 0.3, delay: index * 0.2 }}
                 viewport={{ once: true }}
               >
-                <div className="collection-image-wrapper">
-                  <img
-                    src={`/images/home-page-assests/collection/${category.toLowerCase().replace(' ', '-')}.jpg`}
-                    alt={category}
-                    className="collection-image"
-                  />
-                </div>
-                <h3>{category}</h3>
+                <a href="/GemsBlog">
+                  <div className="collection-image-wrapper">
+                    <img
+                      src={`/images/home-page-assests/collection/${category.toLowerCase().replace(' ', '-')}.jpg`}
+                      alt={category}
+                      className="collection-image"
+                    />
+                  </div>
+                  <h3>{category}</h3>
+                </a>
                 <button className="explore-btn">Explore</button>
               </motion.div>
             ))}

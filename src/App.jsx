@@ -44,6 +44,7 @@ import YellowSapphireGem from './pages/gems/YellowSapphireGem.jsx';
 import BlueSapphireGem from './pages/gems/BlueSapphireGem.jsx';
 import HessoniteGarnetGem from './pages/gems/HessoniteGarnetGem.jsx';
 import CatEye from './pages/gems/CatEye.jsx';
+import Offer from './pages/OfferPage/Offer.jsx';
 
 const TrackPageView = () => {
   const location = useLocation();
@@ -82,6 +83,8 @@ function App() {
                           <Route path="/GemsBlog" element={<GemsBlog />} />
                           <Route path="/AboutUs" element={<AboutUs />} />
                           <Route path="/contact" element={<Contact />} />
+                          <Route path="/Offer" element={<Offer />} />
+
                           <Route
                             path="/gold-coin/:gramQt"
                             element={<GoldCoinPage />}
