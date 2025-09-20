@@ -2,6 +2,7 @@
 
 import NewFooter from '../../components/NewFooter';
 import NewHeader from '../../components/NewHeader';
+import GoldUpgradeSection from '../../components/newHome/GoldUpgradeSection';
 import TrustedSection from '../../components/TrustedSection';
 import '../../styles/Offer.css';
 
@@ -36,6 +37,8 @@ const Offer = () => {
           <div className="card2"> card 2</div>
         </div>
       </div>
+
+      <GoldUpgradeSection />
 
       <NewFooter />
     </div>

@@ -1,0 +1,110 @@
+.gold-upgrade-section {
+  padding: 60px 20px;
+  background: #faf9f6;
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #2c2c2c;
+  margin-bottom: 10px;
+}
+
+.section-subtitle {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 40px;
+}
+
+/* ---------- Steps ---------- */
+.steps-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+  margin-bottom: 60px;
+}
+
+.step-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 25px 20px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+}
+
+.step-card:hover {
+  transform: translateY(-5px);
+}
+
+.step-number {
+  display: inline-block;
+  background: #ffd700;
+  color: #111;
+  font-weight: bold;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+}
+
+/* ---------- Navratna Promise ---------- */
+.promise-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 25px;
+  margin-top: 40px;
+}
+
+.promise-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 25px 20px;
+  text-align: center;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+
+.promise-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.15);
+}
+
+.promise-icon {
+  font-size: 2rem;
+  color: #b8860b;
+  margin-bottom: 12px;
+}
+
+.promise-card h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #222;
+}
+
+.promise-card p {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.4;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 1.6rem;
+  }
+
+  .steps-container,
+  .promise-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .step-card,
+  .promise-card {
+    padding: 20px 15px;
+  }
+}
