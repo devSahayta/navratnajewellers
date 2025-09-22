@@ -10,28 +10,30 @@ import { MdPolicy, MdVerifiedUser } from 'react-icons/md';
 
 const steps = [
   {
-    step: 'Step 1',
-    title: 'Get Your Gold Assessed',
+    step: 'STEP 1',
+    title: 'Bring your old gold',
     description:
       'Visit our showroom with your old gold jewelry, coins, or bars.',
+    image: '../../../public/1.jpg', // ✅ add image path
   },
   {
-    step: 'Step 2',
-    title: 'Purity & Weight Check',
-    description:
-      'Our experts will check the purity and weight of your gold with a 0% deduction.',
+    step: 'STEP 2',
+    title: 'Purity Check',
+    description: 'Our Karatmeter will assess the purity of your gold.',
+    image: '../../../public/3.jpg',
   },
   {
-    step: 'Step 3',
-    title: 'Get Your Value',
-    description:
-      'Receive up to 105% value for your old gold, based on its weight and purity.',
+    step: 'STEP 3',
+    title: ' Get Your Value',
+    description: 'Your old gold will be melted right in front of you.',
+    image: '../../../public/2.jpg',
   },
   {
-    step: 'Step 4',
+    step: 'STEP 4',
     title: 'Choose Your New Jewelry',
     description:
       'Use your exchange value to buy new, stunning jewelry from our collections.',
+    image: '../../../public/4.png',
   },
 ];
 
@@ -90,6 +92,7 @@ export default function GoldUpgradeSection() {
       <div className="steps-container">
         {steps.map((s, idx) => (
           <div key={idx} className="step-card">
+            <img src={s.image} alt={s.title} className="step-image" />
             <span className="step-number">{s.step}</span>
             <h3>{s.title}</h3>
             <p>{s.description}</p>

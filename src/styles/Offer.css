@@ -1,6 +1,7 @@
 .body-container {
   /* height: 600px;
   width: 100%; */
+  background: #faf6f0;
 }
 
 .body-container h1 {
@@ -13,32 +14,58 @@
 }
 
 .ban {
-  height: 400px;
+  margin-top: 100px;
+  height: 500px;
   width: 100%;
-  border: 2px solid red;
+  /* border: 2px solid red; */
+
+  background-image: url('../../public/SYY.jpg'); /* ✅ Correct path for Next.js */
+  background-size: cover; /* ✅ Fills the area */
+  background-position: center; /* ✅ Keeps image centered */
+  background-repeat: no-repeat; /* ✅ No repeat */
 }
 
 .body-container h2 {
+  font-size: 32px;
+  font-weight: 800;
   text-align: center;
-  color: red;
-  margin-top: 10px;
-  margin-bottom: 30px;
+  margin: 30px 0;
+  line-height: 1.4;
+
+  /* Premium gradient (gold → rose → amber) */
+  background: linear-gradient(90deg, #ffd700, #ff6f61, #ffb347);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  /* Elegant glowing shadow */
+  text-shadow:
+    2px 2px 6px rgba(0, 0, 0, 0.25),
+    0 0 12px rgba(255, 215, 0, 0.6),
+    0 0 20px rgba(255, 105, 97, 0.5);
 }
+
 .cards {
   height: 300px;
   width: 100%;
-  border: 2px solid red;
+  /* border: 2px solid red; */
   display: flex;
   gap: 40px;
+  background-color: #faf6f0;
   margin-bottom: 30px;
 }
 
 .card1 {
-  height: 300px;
-  width: 350px;
-  border: 2px solid black;
+  height: inherit;
+  width: 95%;
+  /* border: 2px solid black; */
   justify-items: center;
-  justify-content: space-evenly;
+  justify-content: space-between;
+  margin-left: 40px;
+  margin-top: 20px;
+  background-image: url('../../public/Get1.png'); /* ✅ Correct path for Next.js */
+  background-size: contain; /* ✅ Fills the area */
+  background-position: center; /* ✅ Keeps image centered */
+  background-repeat: no-repeat;
 }
 
 .body-container h3 {
@@ -57,7 +84,73 @@
   border-radius: 50%;
 }
 
-.body-container button {
+/* .body-container button {
   justify-items: center;
   height: 100px;
+} */
+.exp-btn {
+  display: inline-block;
+  padding: 14px 36px;
+  font-size: 18px;
+  font-weight: 600;
+  text-decoration: none;
+  text-align: center;
+  border: none;
+  border-radius: 50px;
+  color: #fff;
+  background: linear-gradient(135deg, #d4af37, #ff9800); /* gold gradient */
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  margin: 40px auto;
+  display: block;
+}
+
+.exp-btn:hover {
+  transform: translateY(-4px) scale(1.05);
+  background: linear-gradient(135deg, #ff9800, #d4af37);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
+}
+
+/* Tablets */
+@media (max-width: 1024px) {
+  .cards {
+    flex-wrap: wrap; /* allows cards to wrap if needed */
+    gap: 30px;
+  }
+
+  .card1 {
+    margin-left: 20px; /* reduce left margin on tablet */
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .cards {
+    flex-direction: column; /* stack cards vertically */
+    align-items: center; /* center them horizontally */
+    gap: 20px;
+  }
+
+  .card1 {
+    margin-left: 0; /* remove left margin */
+    width: 95%; /* keep width same */
+  }
+
+  .card2 {
+    margin: 0 auto; /* center circular card */
+  }
+}
+
+/* Extra Small Mobile */
+@media (max-width: 480px) {
+  .cards {
+    gap: 15px;
+  }
+
+  .card1,
+  .card2 {
+    width: 95%; /* maintain same width proportionally */
+    margin-left: 0;
+  }
 }

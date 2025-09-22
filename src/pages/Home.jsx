@@ -47,7 +47,7 @@ const Home = () => {
     setLastScroll(latest);
   });
 
-  console.log({ direction, lastScroll });
+  // console.log({ direction, lastScroll });
 
   const { isWebsiteOnUpdate } = useWebStatus();
 
