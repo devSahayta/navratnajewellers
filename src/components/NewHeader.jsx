@@ -135,19 +135,19 @@ const navItems = [
 ];
 
 const NewHeader = () => {
-  const { scrollY } = useScroll();
+  // const { scrollY } = useScroll();
   const [direction, setDirection] = useState('Idle');
-  const [lastScroll, setLastScroll] = useState(0);
+  // const [lastScroll, setLastScroll] = useState(0);
   const [menuOpen, setMenuOpen] = useState(false);
 
-  useMotionValueEvent(scrollY, 'change', latest => {
-    if (latest > lastScroll) {
-      setDirection('Down');
-    } else if (latest < lastScroll) {
-      setDirection('Up');
-    }
-    setLastScroll(latest);
-  });
+  // useMotionValueEvent(scrollY, 'change', latest => {
+  //   if (latest > lastScroll) {
+  //     setDirection('Down');
+  //   } else if (latest < lastScroll) {
+  //     setDirection('Up');
+  //   }
+  //   setLastScroll(latest);
+  // });
 
   return (
     <>
@@ -217,7 +217,7 @@ const NewHeader = () => {
 
           {/* Offers + Store + Contact */}
           <div className="header-extra">
-            <Link to="/Offer" className="extra-link">
+            <Link to="/oldgoldexchange" className="extra-link">
               <FiPercent className="extra-icon" />
               <span>Offers</span>
             </Link>

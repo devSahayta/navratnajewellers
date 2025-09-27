@@ -83,7 +83,7 @@ function App() {
                           <Route path="/GemsBlog" element={<GemsBlog />} />
                           <Route path="/AboutUs" element={<AboutUs />} />
                           <Route path="/contact" element={<Contact />} />
-                          <Route path="/Offer" element={<Offer />} />
+                          <Route path="/oldgoldexchange" element={<Offer />} />
 
                           <Route
                             path="/gold-coin/:gramQt"

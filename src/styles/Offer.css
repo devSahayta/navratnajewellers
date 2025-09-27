@@ -16,28 +16,24 @@
 .ban {
   margin-top: 100px;
   height: 500px;
-  width: 100%;
-  /* border: 2px solid red; */
-
-  background-image: url('../../public/SYY.jpg'); /* ✅ Correct path for Next.js */
+  width: 100%; /* border: 2px solid red; */
+  background-image: url('/SYY.jpg'); /* ✅ Correct path for Next.js */
   background-size: cover; /* ✅ Fills the area */
   background-position: center; /* ✅ Keeps image centered */
   background-repeat: no-repeat; /* ✅ No repeat */
 }
 
 .body-container h2 {
-  font-size: 32px;
+  font-size: clamp(20px, 2.5vw, 32px); /* responsive scaling */
   font-weight: 800;
   text-align: center;
   margin: 30px 0;
   line-height: 1.4;
 
-  /* Premium gradient (gold → rose → amber) */
   background: linear-gradient(90deg, #ffd700, #ff6f61, #ffb347);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 
-  /* Elegant glowing shadow */
   text-shadow:
     2px 2px 6px rgba(0, 0, 0, 0.25),
     0 0 12px rgba(255, 215, 0, 0.6),
@@ -57,14 +53,11 @@
 .card1 {
   height: inherit;
   width: 95%;
-  /* border: 2px solid black; */
-  justify-items: center;
-  justify-content: space-between;
   margin-left: 40px;
   margin-top: 20px;
-  background-image: url('../../public/Get1.png'); /* ✅ Correct path for Next.js */
-  background-size: contain; /* ✅ Fills the area */
-  background-position: center; /* ✅ Keeps image centered */
+  background-image: url('/Get1.png');
+  background-size: contain;
+  background-position: center;
   background-repeat: no-repeat;
 }
 
@@ -112,45 +105,68 @@
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
 }
 
-/* Tablets */
+/* Tablet */
 @media (max-width: 1024px) {
-  .cards {
-    flex-wrap: wrap; /* allows cards to wrap if needed */
-    gap: 30px;
-  }
-
-  .card1 {
-    margin-left: 20px; /* reduce left margin on tablet */
+  .ban {
+    height: 400px;
+    background-image: url('/tablet.jpg'); /* Tablet image */
   }
 }
 
-/* Mobile */
+@media (max-width: 700px) {
+  .ban {
+    height: 425px; /* Increased for better visibility */
+    background-image: url('/tablet.jpg'); /* Mobile image */
+    background-size: cover; /* Full bleed */
+    background-position: top center; /* Focus top-center for ads */
+  }
+}
+
 @media (max-width: 768px) {
-  .cards {
-    flex-direction: column; /* stack cards vertically */
-    align-items: center; /* center them horizontally */
-    gap: 20px;
-  }
-
-  .card1 {
-    margin-left: 0; /* remove left margin */
-    width: 95%; /* keep width same */
-  }
-
-  .card2 {
-    margin: 0 auto; /* center circular card */
+  .ban {
+    height: 400px; /* Increased for better visibility */
+    background-image: url('/tablet.jpg'); /* Mobile image */
+    background-size: contain; /* Full bleed */
+    background-position: top center; /* Focus top-center for ads */
   }
 }
 
 /* Extra Small Mobile */
 @media (max-width: 480px) {
-  .cards {
-    gap: 15px;
+  .ban {
+    height: 350px; /* Taller for small screens */
+    background-image: url('/mobile1.jpg'); /* Same mobile banner */
+    background-size: contain;
+    background-position: center;
   }
+}
 
-  .card1,
-  .card2 {
-    width: 95%; /* maintain same width proportionally */
+/* ------------------------------- */
+
+/* Tablet (keeps almost same look as laptop) */
+@media (max-width: 1024px) {
+  .card1 {
+    width: 90%; /* same look */
+    margin-left: 15px; /* just tighter */
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .card1 {
+    width: 96%; /* expand full width */
+    margin-left: 0; /* remove margin so it centers */
+    margin-top: 2px;
+    background-size: contain; /* still show full image */
+  }
+}
+
+/* Extra Small Mobile */
+@media (max-width: 480px) {
+  .card1 {
+    width: 98%;
     margin-left: 0;
+    margin-top: 1px;
+    background-size: contain; /* keep same as laptop look */
   }
 }

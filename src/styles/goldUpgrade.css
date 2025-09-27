@@ -75,9 +75,9 @@
 }
 
 /* ---------- Navratna Promise ---------- */
-.promise-grid {
+/* .promise-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(4, 1fr));
   gap: 25px;
   margin-top: 40px;
 }
@@ -115,7 +115,7 @@
   font-size: 0.95rem;
   color: #555;
   line-height: 1.4;
-}
+} */
 
 /* ---------- Responsive ---------- */
 @media (max-width: 768px) {
@@ -123,13 +123,67 @@
     font-size: 1.6rem;
   }
 
-  .steps-container,
-  .promise-grid {
+  .steps-container {
     grid-template-columns: 1fr;
   }
 
-  .step-card,
-  .promise-card {
+  .step-card {
     padding: 20px 15px;
   }
+}
+
+.promise-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 cards in a row (desktop/laptop) */
+  gap: 25px;
+  margin-top: 40px;
+}
+
+/* Tablet (2 cards per row) */
+@media (max-width: 1024px) {
+  .promise-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile (1 card per row) */
+@media (max-width: 768px) {
+  .promise-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.promise-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 25px 20px;
+  text-align: center;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+
+.promise-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.15);
+}
+
+.promise-icon {
+  font-size: 2rem;
+  color: #b8860b;
+  margin-bottom: 12px;
+}
+
+.promise-card h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #222;
+}
+
+.promise-card p {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.4;
 }

@@ -14,26 +14,26 @@ const steps = [
     title: 'Bring your old gold',
     description:
       'Visit our showroom with your old gold jewelry, coins, or bars.',
-    image: '../../../public/1.jpg', // ✅ add image path
+    image: '1.jpg', // ✅ add image path
   },
   {
     step: 'STEP 2',
     title: 'Purity Check',
     description: 'Our Karatmeter will assess the purity of your gold.',
-    image: '../../../public/3.jpg',
+    image: '3.jpg',
   },
   {
     step: 'STEP 3',
     title: ' Get Your Value',
     description: 'Your old gold will be melted right in front of you.',
-    image: '../../../public/2.jpg',
+    image: '2.jpg',
   },
   {
     step: 'STEP 4',
     title: 'Choose Your New Jewelry',
     description:
       'Use your exchange value to buy new, stunning jewelry from our collections.',
-    image: '../../../public/4.png',
+    image: '4.png',
   },
 ];
 

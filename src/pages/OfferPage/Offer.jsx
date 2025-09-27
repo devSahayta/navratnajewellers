@@ -13,7 +13,7 @@ const Offer = () => {
       <div className="body-container">
         {/* <h1>Old Gold Exchange Offer</h1> */}
 
-        <div className="ban"> Banners</div>
+        <div className="ban"> </div>
         <h2>
           Don't settle for less, Upgrade your old gold to the highest value
         </h2>
